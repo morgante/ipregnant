@@ -21,6 +21,7 @@ public class MainScreen extends Activity {
     	img.setImageResource(R.drawable.pregancy_test);
         
         peeButton = (Button) findViewById(R.id.peeButton);
+        peeButton.setText("Begin Pee Analysis");
         peeButton.setOnClickListener(peeButtonHandler);
     }
 
@@ -33,6 +34,7 @@ public class MainScreen extends Activity {
     
     View.OnClickListener peeButtonHandler = new View.OnClickListener() {
         public void onClick(View v) {
+        	peeButton.setVisibility(View.GONE);
         	ImageView img = (ImageView)findViewById(R.id.stickImage);
         	img.setImageResource(R.drawable.ic_launcher);
         }

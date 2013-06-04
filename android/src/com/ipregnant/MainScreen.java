@@ -4,13 +4,24 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainScreen extends Activity {
 
+	Button peeButton;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        
+        ImageView img = (ImageView)findViewById(R.id.stickImage);
+    	img.setImageResource(R.drawable.pregancy_test);
+        
+        peeButton = (Button) findViewById(R.id.peeButton);
+        peeButton.setOnClickListener(peeButtonHandler);
     }
 
     @Override
@@ -20,10 +31,13 @@ public class MainScreen extends Activity {
         return true;
     }
     
-    public void iPeed() {
-    	
-    	Log.d("Log: ", "peeing");
-    	
-    }
+    View.OnClickListener peeButtonHandler = new View.OnClickListener() {
+        public void onClick(View v) {
+        	ImageView img = (ImageView)findViewById(R.id.stickImage);
+        	img.setImageResource(R.drawable.ic_launcher);
+        }
+    };
+    
+    
     
 }
